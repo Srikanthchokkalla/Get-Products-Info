@@ -11,7 +11,7 @@
         box-sizing: border-box;
       }
       #Container {
-        width: 100vw;
+        width: 10vw;
         display: flex;
         justify-content: center;
       }
@@ -19,6 +19,9 @@
         font-size: 20px;
         margin-top: 10px;
         margin-bottom: 10px;
+        border: 2px solid orange;
+        box-shadow: 2px 5px;
+        cursor: pointer;
       }
     </style>
   </head>
@@ -243,7 +246,7 @@
       document.body.appendChild(subContainer);
       subContainer.style.display = "flex";
       subContainer.style.flexWrap = "wrap";
-      subContainer.style.gap = "10px";
+      subContainer.style.gap = "15px";
       subContainer.style.justifyContent = "center";
 
       let Count = 0;
@@ -264,7 +267,7 @@
 
           div.style.height = "510px";
           div.style.width = "250px";
-          div.style.border = "1px solid ";
+          div.style.border = "1px solid orange";
           div.style.borderRadius = "20px";
           div.style.padding = "10px";
           div.style.boxShadow = "2px 2px 10px";
@@ -286,6 +289,15 @@
           description.style.fontSize = "12px";
           description.style.padding = "8px";
 
+          function getRandomColors() {
+            let letters = "0123456789ABCDEF";
+            let color = "#";
+            for (i = 0; i < 6; i++) {
+              color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+          }
+          document.body.style.backgroundColor = getRandomColors();
           Count++;
         } else {
           alert("No More Products Available");
